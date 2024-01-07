@@ -37,3 +37,14 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 Our code is based on the following repositories:
 * [Attentive Neural Hawkes Process](https://github.com/yangalan123/anhp-andtt)
 * [HYPRO](https://github.com/ant-research/hypro_tpp/tree/main)
+
+If you use this code as part of any published research, please acknowledge the following paper (it encourages researchers who publish their code!):
+
+## Citation
+If you use the code for any published work, please cire the following paper:
+@inproceedings{,
+  author = {},
+  title = {},
+  booktitle = {},
+  year = {2024}
+}
