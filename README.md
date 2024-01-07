@@ -42,9 +42,12 @@ If you use this code as part of any published research, please acknowledge the f
 
 ## Citation
 If you use the code for any published work, please cire the following paper:
-@inproceedings{,
-  author = {},
-  title = {},
-  booktitle = {},
-  year = {2024}
-}
+
+    @inproceedings{,
+      author = {},
+      title = {},
+      booktitle = {},
+      year = {2024}
+    }
+
+
