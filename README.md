@@ -1,13 +1,12 @@
 # Decomposable Transformer Point Process (DTPP) model
 This repository contains the Pytorch implementation of the DTPP method from the paper [Decomposable Transformer Point Process (DTPP) model](https://arxiv.org).
 
-## Install
+## Environment Requirements
 
-The `dtpp` package must be be installed to run examples. To install it, run 
+Ensure that all the dependencies have been installed using the `requirements.txt` file.
 
-    python setup.py dtpp
-
-Other dependencies must be installed using the `requirement.txt` file.
+## Data preparation
+All datasets can be downoladed from [Google-Drive-1](https://drive.google.com/drive/folders/13e5jCkprJGB6jiVtIrU-XaCzSws5PPfB) and [Google-Drive-2](https://drive.google.com/drive/folders/0BwqmV0EcoUc8UklIR1BKV25YR1U?resourcekey=0-OrlU87jyc1m-dVMmY5aC4w). The datasets are already preprocessed and ready to be used. Unzip the files (train.pkl, dev.pkl, test.pkl) and put them in the ./data/{dataset_name} directory.
 
 ## Train and test DTPP model on real-world datasets
 
