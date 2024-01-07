@@ -8,29 +8,27 @@ Ensure that all the dependencies have been installed using the `requirements.txt
 ## Data preparation
 All datasets can be downoladed from [Google-Drive-1](https://drive.google.com/drive/folders/13e5jCkprJGB6jiVtIrU-XaCzSws5PPfB) and [Google-Drive-2](https://drive.google.com/drive/folders/0BwqmV0EcoUc8UklIR1BKV25YR1U?resourcekey=0-OrlU87jyc1m-dVMmY5aC4w). The datasets are already preprocessed and ready to be used. Unzip the files (train.pkl, dev.pkl, test.pkl) and put them in the [./data/{dataset_name}](https://github.com/aresPanos/dtpp/tree/main/data) directory.
 
-## Train and test DTPP model on real-world datasets
+## Train DTPP model on real-world datasets and Evaluate it on next-event prediction
 
-To train and test the performance of VI-DPP use the script `train.py` in the `example` folder as follows:
+We train and evaluate the inter-event time model and the mark model, separately. 
 
-    python train.py --dataset=mimic --Q=1 --max_epochs=100
+To train and evaluate the time model using two mixture components on Taxi dataset, run
 
-The script firstly trains the VI-DPP model over the `mimic` dataset using Q=1 (See definition of arguments below) and  setting the maximum number of epochs equal to 100.
-After running the script, details about the given dataset will be printed out accompanied with the predictive performance of the model on a test dataset in terms of average log-likelihood, root mean squared error (RMSE), and F1 score.
+    python code/run/train_eval_time_dist.py --dataset taxi --data_dir <directory_of_data> --log_dir <directory_of_logs>
 
-## Arguments in `train.py`
-The user can define the following arguments before training the model:
-* --dataset: Daraset name; acceptable values [mimic, mooc, retweet, stackOverflow]. Type: string. Default=mimic
-* --Q: Number of past events taking into account for computing the data likelihood. Type: integer. Default=5
-* --num_samples: Number of Monte Carlo samples used for evaluating ELBO. Type: integer. Default=1
-* --num_weights: Number of weights used for importance sampling of ELBO evaluation. Type: integer. Default=1
-* --threshold: Threshold used to determine if two consecutive values of ELBO are close; its value is used for convergence check. Type: float. Default=1
-* --batch_size: The number of sequences considered at each iteration, i.e. the batch size. Type: integer. Default=32
-* --max_epochs: Maximum number of epochs used for training the model. Type: integer. Default=1000
-* --print_every: Number of epochs needed to be elapsed so various metrics to be printed. Type: integer. Default=5
-* --patience: If 'patience' epochs are elapsed without improvement of the ELBO then stop optimization. Type: integer. Default=100
-* --use_prior: Whether the prior (and posterior) of betas and alpha (variational parameters) is taken into account for computing ELBO. Type: boolean. Default=False
-* --seed: Set seed for random number generator. Type: integer. Default=0
-* --verbose: Set verbose mode. Type: boolean. Default=True
+The learned parameters of the mixture of log-Normals are stored at  `<directory_of_logs>/taxi/time_dist/saved_models/model_numMixtures-2.pt`
+
+Next, to train and evaluate the mark model using D=128 and L=2 layers for the Transformer architecture, run
+
+    python code/run/train_eval_mark_dist.py --dataset taxi -dmodel 64 -nLayers 2 --data_dir <same_as_above> --log_dir <same_as_above>
+
+The learned parameters of the model are stored at  `<directory_of_logs>/taxi/mark_dist/saved_models/XFMRNHPFast_dmodel-64_nLayers-2_nHeads-2_date-time.pt`
+
+## Long-horizon prediction
+
+To perform long-horizon prediction, we only need to define the directories of the two trained models from the previous step, together with the architecture of the Transformer,
+
+    python code/run/multi_step_eval.py --dataset taxi -dmodel 64 -nLayers 2 --data_dir <same_as_above> --log_dir <same_as_above> --model_times_dir <saved_model_of_times> --model_marks_dir <saved_model_of_marks>
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/aresPanos/dtpp/blob/main/LICENSE) file for details.
