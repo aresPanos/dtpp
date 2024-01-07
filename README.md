@@ -32,6 +32,9 @@ The user can define the following arguments before training the model:
 * --seed: Set seed for random number generator. Type: integer. Default=0
 * --verbose: Set verbose mode. Type: boolean. Default=True
 
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/aresPanos/dtpp/blob/main/LICENSE) file for details.
+
 ## Acknowledgements
 Our code is based on the following repositories:
 * [Attentive Neural Hawkes Process](https://github.com/yangalan123/anhp-andtt)
