@@ -13,7 +13,7 @@ This repository contains the Pytorch implementation of the DTPP method from the 
 Ensure that all the dependencies have been installed using the `requirements.txt` file.
 
 ## Data preparation
-All datasets can be downoladed from [Google-Drive-1](https://drive.google.com/drive/folders/13e5jCkprJGB6jiVtIrU-XaCzSws5PPfB) and [Google-Drive-2](https://drive.google.com/drive/folders/0BwqmV0EcoUc8UklIR1BKV25YR1U?resourcekey=0-OrlU87jyc1m-dVMmY5aC4w). The datasets are already preprocessed and ready to be used. Unzip the files (train.pkl, dev.pkl, test.pkl) and put them in the [./data/{dataset_name}](https://github.com/aresPanos/dtpp/tree/main/data) directory.
+All datasets can be downoladed from [Google-Drive-1](https://drive.google.com/drive/folders/13e5jCkprJGB6jiVtIrU-XaCzSws5PPfB) and [Google-Drive-2](https://drive.google.com/drive/folders/0BwqmV0EcoUc8UklIR1BKV25YR1U?resourcekey=0-OrlU87jyc1m-dVMmY5aC4w). The datasets are already preprocessed and ready to be used. Unzip the files (train.pkl, dev.pkl, test.pkl) and save them in the [./data/{dataset_name}](https://github.com/aresPanos/dtpp/tree/main/data) directory.
 
 ## Train DTPP model on real-world datasets and Evaluate it on next-event prediction
 
