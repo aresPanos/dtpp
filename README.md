@@ -1,5 +1,12 @@
-# Decomposable Transformer Point Process (DTPP) model
-This repository contains the Pytorch implementation of the DTPP method from the paper [Decomposable Transformer Point Process (DTPP) model](https://arxiv.org).
+# Decomposable Transformer Point Process (DTPP)
+This repository contains the Pytorch implementation of the DTPP method from the paper [Decomposable Transformer Point Process (DTPP) model](https://arxiv.org). If you use the code for any published work, please cire the following paper:
+
+    @inproceedings{,
+      author = {},
+      title = {},
+      booktitle = {},
+      year = {2024}
+    }
 
 ## Environment Requirements
 
@@ -39,15 +46,5 @@ Our code is based on the following repositories:
 * [HYPRO](https://github.com/ant-research/hypro_tpp/tree/main)
 
 If you use this code as part of any published research, please acknowledge the following paper (it encourages researchers who publish their code!):
-
-## Citation
-If you use the code for any published work, please cire the following paper:
-
-    @inproceedings{,
-      author = {},
-      title = {},
-      booktitle = {},
-      year = {2024}
-    }
 
 
