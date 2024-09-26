@@ -1,5 +1,5 @@
 # Decomposable Transformer Point Process (DTPP)
-This repository contains the Pytorch implementation of the DTPP method from the paper [Decomposable Transformer Point Process (DTPP) model](https://arxiv.org). If you use the code for any published work, please cite the following paper:
+This repository contains the Pytorch implementation of the DTPP method from the **NeurIPS 2024** paper [Decomposable Transformer Point Process (DTPP) model](https://arxiv.org). If you use the code for any published work, please cite the following paper:
 
     @inproceedings{,
       author = {},
